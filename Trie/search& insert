@@ -22,3 +22,53 @@ bool search(struct TrieNode *root, string key)
     }
     return temp->isLeaf;
 }
+
+
+//LeetCode
+
+class TrieNode {
+public:
+    TrieNode() {
+        
+    }
+    TrieNode *children[26] = {NULL};
+    bool isNode = false;
+};
+
+class Trie {
+public:
+    Trie() {
+        root = new TrieNode();
+    }
+    void insert(string word) {
+        TrieNode *current = root;
+        for (auto c : word) {
+            int index = c - 'a';
+            if (current->children[index] == NULL) {
+                current->children[index] = new TrieNode();
+            }
+            current = current->children[index];
+        }
+        current->isNode = 1;
+    }
+    
+    bool search(string &word, bool isPrefix) {
+        TrieNode *current = root;
+        for (auto c : word) {
+            int index = c - 'a';
+            if (current->children[index] == NULL)
+                return false;
+            current = current->children[index];
+        }
+        return isPrefix || current->isNode; 
+    }
+    bool search(string word) {
+        return search(word, false);
+    }
+    bool startsWith(string prefix) {
+        return search(prefix, true);
+    }
+
+private:
+    TrieNode* root;
+};
