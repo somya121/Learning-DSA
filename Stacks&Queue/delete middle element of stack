@@ -1,0 +1,15 @@
+void deleteMid(stack<int>&s, int sizeOfStack)
+    {
+     
+  if(s.size()==(int)(ceil(sizeOfStack+1)/2))
+       {
+           s.pop();
+           return ;
+       }
+       int s1=s.top();
+       s.pop();
+       deleteMid(s,sizeOfStack);
+       s.push(s1);
+       return ;
+
+    }
