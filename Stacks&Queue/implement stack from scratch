@@ -1,1 +1,21 @@
+//using linked list
+void MyStack ::push(int x) 
+{
+   StackNode *t = new StackNode(x);
+   if(t==NULL){
+       return;
+   }
+   t->next = top;
+   top = t;
+}
 
+//Function to remove an item from top of the stack.
+int MyStack ::pop() 
+{
+    if(top ==NULL){
+        return -1;
+    }
+    int x = top->data;
+    top = top->next;
+    return x;
+}
