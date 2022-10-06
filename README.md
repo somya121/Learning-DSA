@@ -14,4 +14,4 @@ In order to participate in Hacktoberfest 2022
 The first 40,000 participants (maintainers and contributors) who complete Hacktoberfest can elect to receive one of two prizes: a tree planted in their name, or the Hacktoberfest 2022 t-shirt.
 
 ## Maintainer
-This repository is maintained by SOMYA SINGH.
+This repository is maintained by [Somya Singh](https://github.com/somya121).
