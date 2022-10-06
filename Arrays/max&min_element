@@ -1,0 +1,18 @@
+
+pair<long long, long long> getMinMax(long long a[], int n) {
+ 
+    long long maxV = a[0];
+    long long minV = a[0];
+    for(int i=0;i<n;i++){
+        if(a[i]<minV){
+            minV=a[i];
+        }
+        else if(a[i]>maxV){
+            maxV = a[i];
+        }
+    }
+    return {minV,maxV};
+    
+    
+    
+}
